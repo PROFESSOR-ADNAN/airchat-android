@@ -22,3 +22,8 @@ jobs:
         run: bash ./gradlew :app:assembleFdroidDebug
       - name: Android lint
         run: bash ./gradlew :app:lintFdroidDebug
+      - name: Upload debug APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: airchat-debug-apk
+          path: app/build/outputs/apk/fdroid/debug/*.apk
