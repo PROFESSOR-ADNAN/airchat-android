@@ -575,7 +575,7 @@ private fun AirChatScreen(
             TopAppBar(
                 title = {
                     Column {
-                        Text("AirChat", fontWeight = FontWeight.SemiBold)
+                        Text("MeshLink", fontWeight = FontWeight.SemiBold)
                         Text(
                             text = "${state.nickname} / ${state.localPeerId}",
                             style = MaterialTheme.typography.labelMedium,
@@ -1428,7 +1428,7 @@ private fun readTrustBackupImportReview(
     existingPeers: Map<String, TrustedPeer>
 ): TrustBackupReadResult {
     val backup = TrustBackupCodec.decode(raw)
-        ?: return TrustBackupReadResult.Error("The selected content is not an AirChat signed trust backup.")
+        ?: return TrustBackupReadResult.Error("The selected content is not a MeshLink signed trust backup.")
     val verification = TrustBackupCodec.verify(backup)
     if (!verification.isValid) {
         return TrustBackupReadResult.Error(
@@ -1587,7 +1587,7 @@ private fun appVersion(context: Context): String {
 private fun shareDiagnostics(context: Context, report: DiagnosticsDialogReport) {
     val shareIntent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, "AirChat diagnostics")
+        putExtra(Intent.EXTRA_SUBJECT, "MeshLink diagnostics")
         putExtra(Intent.EXTRA_TEXT, report.shareText)
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
@@ -1600,7 +1600,7 @@ private fun shareDiagnostics(context: Context, report: DiagnosticsDialogReport) 
 private fun shareTrustBackup(context: Context, backup: SignedTrustBackup) {
     val shareIntent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, "AirChat signed trust backup")
+        putExtra(Intent.EXTRA_SUBJECT, "MeshLink signed trust backup")
         putExtra(Intent.EXTRA_TEXT, TrustBackupCodec.formatShareText(backup))
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
@@ -1632,7 +1632,7 @@ private fun sharePeerSafety(
     )
     val shareIntent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, "AirChat safety card for ${peer.name}")
+        putExtra(Intent.EXTRA_SUBJECT, "MeshLink safety card for ${peer.name}")
         putExtra(Intent.EXTRA_TEXT, shareText)
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }
@@ -1646,10 +1646,10 @@ private fun shareRoomInvite(context: Context, channel: String, code: String) {
     val invitePayload = VerificationPayload.roomInvite(channel, code)
     val shareIntent = Intent(Intent.ACTION_SEND).apply {
         type = "text/plain"
-        putExtra(Intent.EXTRA_SUBJECT, "AirChat room invite #$channel")
+        putExtra(Intent.EXTRA_SUBJECT, "MeshLink room invite #$channel")
         putExtra(
             Intent.EXTRA_TEXT,
-            "AirChat private-room invite\nRoom: #$channel\nCode: $code\nPayload: $invitePayload\nPassphrase is not included."
+            "MeshLink private-room invite\nRoom: #$channel\nCode: $code\nPayload: $invitePayload\nPassphrase is not included."
         )
         addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
     }

@@ -50,7 +50,7 @@ object DiagnosticsReportFormatter {
     const val JSON_SCHEMA = "dev.offlinemesh.airchat.diagnostics.v1"
 
     fun format(snapshot: DiagnosticsSnapshot): String = buildString {
-        appendLine("AirChat diagnostics")
+        appendLine("MeshLink diagnostics")
         appendLine("App: ${snapshot.appVersion}")
         appendLine("Protocol: ${snapshot.protocolVersion}")
         appendLine("Device: ${snapshot.device}")

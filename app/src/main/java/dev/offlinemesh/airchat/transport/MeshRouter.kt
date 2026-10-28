@@ -318,7 +318,7 @@ class MeshRouter(
             id = "notice:${UUID.randomUUID()}",
             channel = channel,
             senderId = localPeerId,
-            senderName = "AirChat",
+            senderName = "MeshLink",
             body = body,
             state = DeliveryState.Verified,
             isLocal = true

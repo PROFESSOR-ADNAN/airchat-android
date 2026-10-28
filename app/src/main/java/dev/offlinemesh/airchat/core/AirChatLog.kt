@@ -10,7 +10,7 @@ enum class AirChatLogLevel {
 }
 
 object AirChatLog {
-    const val TAG = "AirChat"
+    const val TAG = "MeshLink"
 
     fun diagnostic(category: String, detail: String) {
         val message = format(category, detail)

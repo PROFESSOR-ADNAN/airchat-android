@@ -26,7 +26,7 @@ class BackgroundAlertTrackerTest {
 
         val alert = tracker.consumeMessageAlert(listOf(incoming), shouldNotify = true)
 
-        assertEquals("New AirChat message", alert?.title)
+        assertEquals("New MeshLink message", alert?.title)
         assertEquals("alice in #lobby", alert?.body)
         assertFalse(alert?.body?.contains("secret field note") ?: true)
     }
@@ -72,7 +72,7 @@ class BackgroundAlertTrackerTest {
 
         val alert = tracker.consumeFileAlert(listOf(file), shouldNotify = true)
 
-        assertEquals("New AirChat file", alert?.title)
+        assertEquals("New MeshLink file", alert?.title)
         assertEquals("alice in #ops", alert?.body)
         assertFalse(alert?.body?.contains("private-notes.txt") ?: true)
     }

@@ -50,7 +50,7 @@ class TrustBackupCodecTest {
 
         val shareText = TrustBackupCodec.formatShareText(backup)
 
-        assertTrue(shareText.contains("AirChat signed trust backup"))
+        assertTrue(shareText.contains("MeshLink signed trust backup"))
         assertTrue(shareText.contains("Trusted peers: 1"))
         assertTrue(shareText.contains("```json"))
         assertFalse(shareText.contains("BEGIN PRIVATE KEY"))

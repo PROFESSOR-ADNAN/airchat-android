@@ -14,7 +14,7 @@ class SafetyShareFormatterTest {
             safetyPayload = "AIRCHAT-SAFETY:FINGERPRINT"
         )
 
-        assertTrue(report.contains("AirChat safety card"))
+        assertTrue(report.contains("MeshLink safety card"))
         assertTrue(report.contains("Peer: Bob Field Phone"))
         assertTrue(report.contains("Peer id: peer-1234567890abcdef"))
         assertTrue(report.contains("Safety number: 1234-ABCD-5678"))

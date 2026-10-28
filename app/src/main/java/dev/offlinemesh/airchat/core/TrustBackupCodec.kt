@@ -112,7 +112,7 @@ object TrustBackupCodec {
     }
 
     fun formatShareText(backup: SignedTrustBackup): String = buildString {
-        appendLine("AirChat signed trust backup")
+        appendLine("MeshLink signed trust backup")
         appendLine("Exporter: ${backup.payload.exporterDisplayName} / ${backup.payload.exporterPeerId}")
         appendLine("Trusted peers: ${backup.payload.trustedPeers.size}")
         appendLine("Created at: ${backup.payload.createdAt}")

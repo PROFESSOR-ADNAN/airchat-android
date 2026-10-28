@@ -10,7 +10,7 @@ object SafetyShareFormatter {
         val safeName = peerName.trim().ifBlank { "Unknown peer" }.take(MAX_PEER_NAME_LENGTH)
         val peerLabel = peerId.trim().take(MAX_PEER_ID_LENGTH).ifBlank { "unknown" }
         return buildString {
-            appendLine("AirChat safety card")
+            appendLine("MeshLink safety card")
             appendLine("Peer: $safeName")
             appendLine("Peer id: $peerLabel")
             appendLine("Safety number: $safetyNumber")

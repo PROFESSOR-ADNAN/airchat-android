@@ -19,7 +19,7 @@ class DiagnosticsReportFormatterTest {
     fun formatsReadableDiagnosticsReport() {
         val report = DiagnosticsReportFormatter.format(exampleSnapshot())
 
-        assertTrue(report.contains("AirChat diagnostics"))
+        assertTrue(report.contains("MeshLink diagnostics"))
         assertTrue(report.contains("Identity key: Android Keystore hardware-backed"))
         assertTrue(report.contains("Conversation: #lobby"))
         assertTrue(report.contains("Private room: on / code ABCD-1234-EF56 / strength strong"))

@@ -31,7 +31,7 @@ class BackgroundAlertTracker {
 
         val latest = candidates.maxBy { it.createdAt }
         return BackgroundAlert(
-            title = "New AirChat message",
+            title = "New MeshLink message",
             body = "${latest.senderName} in ${conversationLabel(latest.channel)}"
         )
     }
@@ -43,7 +43,7 @@ class BackgroundAlertTracker {
 
         val latest = candidates.maxBy { it.receivedAt }
         return BackgroundAlert(
-            title = "New AirChat file",
+            title = "New MeshLink file",
             body = "${latest.senderName} in ${conversationLabel(latest.channel)}"
         )
     }
